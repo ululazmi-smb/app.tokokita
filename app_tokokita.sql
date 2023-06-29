@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Jun 29, 2023 at 08:21 PM
+-- Generation Time: Jun 29, 2023 at 08:36 PM
 -- Server version: 8.0.33-0ubuntu0.20.04.2
 -- PHP Version: 7.4.3-4ubuntu2.18
 
@@ -30,11 +30,11 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `laporan` (
   `id` int NOT NULL,
-  `deskripsi` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `deskripsi` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `jumlah` int NOT NULL,
   `tanggal` date NOT NULL,
-  `type` enum('masuk','keluar') NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `type` enum('masuk','keluar') COLLATE utf8mb4_general_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `laporan`
@@ -51,11 +51,11 @@ INSERT INTO `laporan` (`id`, `deskripsi`, `jumlah`, `tanggal`, `type`) VALUES
 
 CREATE TABLE `menu` (
   `id` int NOT NULL,
-  `nama` varchar(255) NOT NULL,
+  `nama` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
   `stok` int NOT NULL,
-  `harga` varchar(255) NOT NULL,
-  `type` enum('makanan','minuman','snack') NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `harga` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `type` enum('makanan','minuman','snack') COLLATE utf8mb4_general_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `menu`
@@ -73,10 +73,10 @@ INSERT INTO `menu` (`id`, `nama`, `stok`, `harga`, `type`) VALUES
 
 CREATE TABLE `user` (
   `id` int NOT NULL,
-  `email` varchar(255) NOT NULL,
-  `username` varchar(255) NOT NULL,
-  `password` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `email` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `username` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `password` varchar(255) COLLATE utf8mb4_general_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `user`
